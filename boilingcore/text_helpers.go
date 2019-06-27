@@ -38,11 +38,19 @@ import (
 // fk != table = industry.ParentIndustry | industry.Industry
 func txtNameToOne(fk drivers.ForeignKey) (localFn, foreignFn string) {
 	foreignFn = strmangle.Singular(trimSuffixes(fk.Column))
-	fkeyNotTableName := foreignFn != strmangle.Singular(fk.ForeignTable)
+	foreignTableName := strmangle.Singular(fk.ForeignTable)
 	foreignFn = strmangle.TitleCase(foreignFn)
 
-	if fkeyNotTableName {
+	if foreignFn != foreignTableName {
 		localFn = foreignFn
+	}
+
+	if foreignFn == fk.Column {
+		if strings.HasPrefix(foreignKey, foreignTableName) {
+			foreignFn = foreignTableName
+		} else {
+			foreignFn += foreignTableName
+		}
 	}
 
 	plurality := strmangle.Plural
