@@ -46,7 +46,7 @@ func txtNameToOne(fk drivers.ForeignKey) (localFn, foreignFn string) {
 	}
 
 	if foreignFn == fk.Column {
-		if strings.HasPrefix(foreignKey, foreignTableName) {
+		if strings.HasPrefix(foreignFn, foreignTableName) {
 			foreignFn = foreignTableName
 		} else {
 			foreignFn += foreignTableName
