@@ -12,8 +12,8 @@ import (
 	"text/template"
 
 	"github.com/pkg/errors"
+	"github.com/volatiletech/bugzpodder/strmangle"
 	"github.com/volatiletech/sqlboiler/drivers"
-	"github.com/volatiletech/sqlboiler/strmangle"
 	"github.com/volatiletech/sqlboiler/templatebin"
 )
 
