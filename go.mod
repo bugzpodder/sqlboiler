@@ -1,4 +1,4 @@
-module github.com/grailbio-external/sqlboiler
+module github.com/grailbio-external/sqlboiler/v4
 
 go 1.18
 
