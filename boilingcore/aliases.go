@@ -3,7 +3,7 @@ package boilingcore
 import (
 	"fmt"
 
-	"github.com/grailbio-external/sqlboiler/strmangle"
+	"github.com/grailbio-external/sqlboiler/v4/strmangle"
 	"github.com/volatiletech/sqlboiler/drivers"
 )
 
